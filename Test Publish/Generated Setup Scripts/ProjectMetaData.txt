@@ -1,0 +1,24 @@
+[application]name=8051 Hex Explorer
+shortcut_name=8051 Hex Explorer
+version=1.1.1.1
+publisher=SpiceLogic
+url=http://www.spicelogic.com/
+support_url=http://www.spicelogic.com/HelpDesk
+startup_filename=Desktop UI.exe
+id={{5e8f298a-5f4e-418f-b193-7c14c8bca9dd}
+deployable_folder=E:\My Projects\In-House Solutions\DotNet Class Libraries\Deployment Toolkit\Test Publish\Deployable
+eula_file=E:\My Projects\In-House Solutions\DotNet Class Libraries\Deployment Toolkit\Test Publish\Resources\End User License Agreement.txt
+icon_path=E:\My Projects\In-House Solutions\DotNet Class Libraries\Deployment Toolkit\Test Publish\Resources\
+icon_name=MainApplicationIcon.ico
+output_dir=E:\My Projects\In-House Solutions\DotNet Class Libraries\Deployment Toolkit\Test Publish\
+output_filename=8051Setup
+extension=.spiceProj
+
+
+[platform]
+cpu=AnyCPU
+dot_net_version=4.5
+
+
+[uninstall]
+feedback_url=http://www.google.com/

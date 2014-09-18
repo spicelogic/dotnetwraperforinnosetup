@@ -1,0 +1,8 @@
+﻿<Window x:Class="Test_GUI.MessageDisplayBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Message Display Box" Height="434" Width="535" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBox x:Name="txtContent" TextWrapping="Wrap" IsReadOnly="True" VerticalScrollBarVisibility="Auto" />
+    </Grid>
+</Window>

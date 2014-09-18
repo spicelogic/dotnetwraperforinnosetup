@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Test_GUI.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="signToolPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files (x86)\Windows Kits\8.0\bin\x64\signtool.exe</Value>
+    </Setting>
+    <Setting Name="timeStampServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://timestamp.digicert.com</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

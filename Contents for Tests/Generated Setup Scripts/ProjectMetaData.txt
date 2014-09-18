@@ -1,0 +1,26 @@
+[application]
+name=8051 Hex Explorer
+shortcut_name=8051 Hex Explorer
+version=1.1.1.1
+publisher=SpiceLogic
+url=http://www.spicelogic.com/
+support_url=http://www.spicelogic.com/HelpDesk
+startup_filename=Desktop UI.exe
+id={{9a1ee016-b3d2-4c09-a873-8b18d8e094fe}
+deployable_folder=D:\My Projects\Experimental Projects\Inno Setup Wrapper\Contents for Tests\Deployable
+eula_file=D:\My Projects\Experimental Projects\Inno Setup Wrapper\Contents for Tests\Resources\End User License Agreement.txt
+icon_path=D:\My Projects\Experimental Projects\Inno Setup Wrapper\Contents for Tests\Resources\
+icon_name=MainApplicationIcon.ico
+output_dir=D:\My Projects\Experimental Projects\Inno Setup Wrapper\Contents for Tests\
+output_filename=8051Setup
+extension=.spiceProj
+
+
+[platform]
+
+cpu=AnyCPU
+
+
+[uninstall]
+
+feedback_url=http://www.google.com/

@@ -1,0 +1,103 @@
+﻿<Window x:Class="Test_GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Test Window" Height="571.373" Width="864" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ScrollViewer Margin="10" Padding="20" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <Label Content="Company Name" />
+                <TextBox x:Name="textboxCompanyName" />
+
+                <Label Content="Product Name" />
+                <TextBox x:Name="textboxProductName" />
+
+                <Label Content="Shortcut Name" />
+                <TextBox x:Name="textboxShortCutName" />
+
+                <Label Content="Product Id" />
+                <TextBox x:Name="textboxProductId" />
+
+                <Label Content="Product Version" />
+                <TextBox x:Name="textboxProductVersion" />
+
+                <Label Content="Deployable Folder Path" />
+                <TextBox x:Name="textboxDeployableFolderPath" />
+
+                <Label Content="StartUp Appliction FileName" />
+                <TextBox x:Name="textboxStartUpApplictionFileName" />
+
+                <Label Content="Company Url" />
+                <TextBox x:Name="textboxCompanyUrl" />
+
+                <Label Content="Support Url" />
+                <TextBox x:Name="textboxSupportUrl" />
+
+                <Label Content="Icon File Path" />
+                <TextBox x:Name="textboxIconFilePath" />
+
+                <Label Content="EULA File Path" />
+                <TextBox x:Name="textboxEULAFilePath" />
+
+                <Label Content="Platform" />
+                <TextBox x:Name="textboxPlatform" />
+
+                <Label Content="Uninstaller Feedback Url" />
+                <TextBox x:Name="textboxUninstallerFeedbackUrl" />
+
+                <Label Content="Generated Setup Script Folder Path" />
+                <TextBox x:Name="textboxGeneratedSetupScriptFolderPath" />
+
+                <Label Content="OutPut Setup File Path" />
+                <TextBox x:Name="textboxOutPutSetupFilePath" />
+
+                <Label Content="Target .Net Framework Version" />
+                <TextBox x:Name="textboxTargetDotNetFrameworkVersion" />
+
+                <Label Content="File Extension Association" />
+                <TextBox x:Name="textboxFileExtensionAssociation" />
+
+                <GroupBox Margin="10" Padding="20">
+                    <GroupBox.Header>
+                        <CheckBox x:Name="chkContextMenu" Content="Windows Shell Context Menu" IsChecked="True" />
+                    </GroupBox.Header>
+                    <StackPanel>
+                        <Label Content="Display Name" Visibility="{Binding ElementName=chkContextMenu, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}" />
+                        <TextBox x:Name="textboxDisplayName" Visibility="{Binding ElementName=chkContextMenu, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}" />
+
+                        <Label Content="Target Type" Visibility="{Binding ElementName=chkContextMenu, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}" />
+                        <TextBox x:Name="textboxTargetType" Visibility="{Binding ElementName=chkContextMenu, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}" />
+
+                        <Label Content="Extension Constraints (separate by ;)" Visibility="{Binding ElementName=chkContextMenu, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}" />
+                        <TextBox x:Name="textboxExtensionConstraints" Visibility="{Binding ElementName=chkContextMenu, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}" />
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Margin="10" Padding="20">
+                    <GroupBox.Header>
+                        <CheckBox x:Name="chkSign" Content="Sign with Sign tool" IsChecked="True" />
+                    </GroupBox.Header>
+                    <StackPanel>
+                        <Label Content="Sign Tool Path" Visibility="{Binding ElementName=chkSign, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}" />
+                        <TextBox x:Name="textboxSignToolPath" Visibility="{Binding ElementName=chkSign, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}" />
+
+                        <Label Content="Pfx File Path" Visibility="{Binding ElementName=chkSign, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}" />
+                        <TextBox x:Name="textboxPfxFilePath" Visibility="{Binding ElementName=chkSign, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}" />
+
+                        <Label Content="TimeStamp Server Url" Visibility="{Binding ElementName=chkSign, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}" />
+                        <TextBox x:Name="textboxTimeStampServerUrl" Visibility="{Binding ElementName=chkSign, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}" />
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Inno Setup" Margin="10" Padding="20">
+                    <StackPanel>
+                        <Label Content="InnoSetup Compiler" />
+                        <TextBox x:Name="textboxInnoSetupCompiler" />
+                    </StackPanel>
+                </GroupBox>
+
+                <Button Margin="20" Cursor="Hand" Content="Build Setup" Click="btnBuildSetup_Click" />
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Window>

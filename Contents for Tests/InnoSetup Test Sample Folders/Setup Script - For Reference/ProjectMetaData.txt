@@ -1,0 +1,19 @@
+[application]
+name=8051 Hex Explorer
+version=1.0
+publisher=SpiceLogic
+url=http://www.spicelogic.com/
+startup_filename=Desktop UI.exe
+id={{5E8F298A-5F4E-418F-B193-7C14C8BCA9DD}
+deployable_folder=..\Deployable
+eula_file=..\Resources\End User License Agreement.txt
+icon_path=..\Resources\
+icon_name=MainApplicationIcon.ico
+output_dir=..\
+output_filename=8051Setup
+
+[platform]
+cpu=AnyCPU
+
+[uninstall]
+feedback_url=http://www.google.com/
