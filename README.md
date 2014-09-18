@@ -6,7 +6,7 @@
 
 Welcome to the .NET Wraper For InnoSetup (http://www.jrsoftware.org/isinfo.php)
 
-This Project is a .NET Class library which is gives the .NET Developers the pleasure of using Inno Setup without learning any Pascal scripting language. Not only that, this wrapper .NET Interface will allow the .NET Programmers to create installer file automatically as part of Continuous Integration directly using .NET Language. The .NET Developers will be able to call a method named BuildSetupFile() in a Wrapper class named InnoSetupService. Yes, that will build the Installer exe file. There is nothing to learn actually if you want to use this class library for creating your Installer.
+It is a .NET Class library project that gives .NET Developers the pleasure of using Inno Setup without learning any Pascal scripting language. Not only that, this wrapper .NET Interface will allow the .NET Programmers to create installer file automatically as part of Continuous Integration directly using .NET Language. The .NET Developers will be able to call a method named BuildSetupFile() in a Wrapper class named InnoSetupService. Yes, that will build the Installer exe file. There is nothing to learn actually if you want to use this class library for creating your Installer.
 
 Yes, you do need to configure your installer and the Constructor of this InnoSetupService takes an object which contains various properties. By setting various properties, you can configure the installer. So, the very basic start up usage would be like this:
 
