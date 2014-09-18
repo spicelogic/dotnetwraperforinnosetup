@@ -11,7 +11,7 @@ namespace SpiceLogic.InnoSetupWrapper.Models
         /// <summary>
         /// 
         /// </summary>
-        protected enum PrerequisiteInstallerSources
+        public enum PrerequisiteInstallerSources
         {
             /// <summary>
             /// The web
@@ -56,6 +56,8 @@ namespace SpiceLogic.InnoSetupWrapper.Models
         private Dictionary<Architecture, string> _filePathIfInstallSourceIsEmbedded;
 
         private Dictionary<Architecture, string> _fileUrlIfInstallSourceIsWebAuto;
+
+        private string _installerDownloadWebUrlIfSourceIsWeb;
 
         protected const string ScriptSectionStart = "//#section PrerequisiteScripts";
 
@@ -102,6 +104,19 @@ namespace SpiceLogic.InnoSetupWrapper.Models
                     _fileUrlIfInstallSourceIsWebAuto = value;
                     InstallerSource = value == null ? PrerequisiteInstallerSources.Web : PrerequisiteInstallerSources.WebAuto;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the installer download web URL if source is web.
+        /// </summary>
+        public string InstallerDownloadWebUrlIfSourceIsWeb
+        {
+            get { return _installerDownloadWebUrlIfSourceIsWeb; }
+            set
+            {
+                _installerDownloadWebUrlIfSourceIsWeb = value;
+                InstallerSource = PrerequisiteInstallerSources.Web;
             }
         }
 

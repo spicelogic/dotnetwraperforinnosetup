@@ -9,8 +9,8 @@ namespace SpiceLogic.InnoSetupWrapper.PrerequisiteStrategies
     /// 
     /// </summary>
     public class DotNetFrameworkPrerequisite : Prerequisite
-    {
-        private readonly Dictionary<DotNetVersions, string> Downloads = new Dictionary<DotNetVersions, string>
+    { 
+        private readonly Dictionary<DotNetVersions, string> _downloads = new Dictionary<DotNetVersions, string>
         {
             {DotNetVersions.V1_1, "http://www.microsoft.com/en-us/download/details.aspx?id=26"},
             {DotNetVersions.V2_0, "http://www.microsoft.com/en-us/download/details.aspx?id=1639"},
@@ -125,14 +125,16 @@ WizardForm.StatusLabel.Caption := '';";
         {
             _frameworkVersion = frameworkVersion;
             AlertMessageForMissingPrerequisite = "You need to download and install .NET framework version {0}";
+            InstallerSource = PrerequisiteInstallerSources.Web;
         }
-
+       
         /// <summary>
         /// Gets the installer download web URL if source is web.
         /// </summary>
-        protected virtual string InstallerDownloadWebUrlIfSourceIsWeb
+        public new string InstallerDownloadWebUrlIfSourceIsWeb
         {
-            get { return Downloads[_frameworkVersion]; }
+            get { return _downloads[_frameworkVersion]; }
+            set { _downloads[_frameworkVersion] = value; }
         }
 
         /// <summary>
