@@ -31,10 +31,10 @@ namespace Test_GUI
         {
             string innosetupTestSampleFolderPath = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory)))) + @"\Contents for Tests\InnoSetup Test Sample Folders";
 
-            textboxCompanyName.Text = "SpiceLogic";
-            textboxProductName.Text = "8051 Hex Explorer";
-            textboxShortCutName.Text = "8051 Hex Explorer";
-            textboxProductId.Text = Guid.NewGuid().ToString().ToUpper(); // "5E8F298A-5F4E-418F-B193-7C14C8BCA9DD";
+            textboxCompanyName.Text = "Your Company Name";
+            textboxProductName.Text = "Your Product Name";
+            textboxShortCutName.Text = "Product";
+            textboxProductId.Text = Guid.NewGuid().ToString().ToUpper();
             textboxProductVersion.Text = "1.1.1.1";
             textboxDeployableFolderPath.Text = innosetupTestSampleFolderPath + @"\Deployable";
             textboxStartUpApplictionFileName.Text = "Desktop UI.exe";
@@ -49,10 +49,10 @@ namespace Test_GUI
             textboxTargetDotNetFrameworkVersion.Text = EnumUtils.StringValueOf(DotNetVersions.V1_1);
             textboxSignToolPath.Text = "C:\\Program Files (x86)\\Windows Kits\\8.0\\bin\\x64\\signtool.exe";
             textboxInnoSetupCompiler.Text = "C:\\Program Files (x86)\\Inno Setup 5\\iscc.exe";
-            textboxFileExtensionAssociation.Text = ".spiceProj";
-            textboxDisplayName.Text = "Spice Proj";
+            textboxFileExtensionAssociation.Text = ".myProj";
+            textboxDisplayName.Text = "My Proj";
             textboxTargetType.Text = WindowsShellContextMenuItem.TargetTypes.Folder.ToString();
-            textboxExtensionConstraints.Text = ".spiceProj;.spiceProj2";
+            textboxExtensionConstraints.Text = ".myProj;.myProj2";
         }
 
         /// <summary>
@@ -87,10 +87,10 @@ namespace Test_GUI
                     {
                         //new DotNetFrameworkPrerequisite(dotNetVersion),
                         //new DotNetFrameworkPrerequisite(dotNetVersion) { 
-                        //    FilePathIfInstallSourceIsEmbedded = new Dictionary<SpiceLogic.DeploymentToolkit.InstallerModule.Prerequisite.Architecture, string> 
+                        //    FilePathIfInstallSourceIsEmbedded = new Dictionary<Prerequisite.Architecture, string> 
                         //    {
                         //        { 
-                        //            SpiceLogic.DeploymentToolkit.InstallerModule.Prerequisite.Architecture.Any, @"C:\Users\Andrey\Dropbox\Public\dotnetfx.exe"
+                        //            Prerequisite.Architecture.Any, @"C:\dotnetfx.exe"
                         //        }
                         //    }, 
                         //    AlertPrerequisiteInstallation = false 
@@ -99,29 +99,28 @@ namespace Test_GUI
                             FileUrlIfInstallSourceIsWebAuto = new Dictionary<Prerequisite.Architecture, string> 
                             {
                                 { 
-                                    Prerequisite.Architecture.Any, "http://dl.dropboxusercontent.com/u/204009/dotnetfx.exe"
+                                    Prerequisite.Architecture.Any, "http://your-repository/dotnetfx.exe"
                                 }
                             }, 
                             AlertPrerequisiteInstallation = false,
                             MessageWhileInstallationInProgress = "Please wait while setup install prerequisite: .net framework..."
                         },
-                        //new SQLExpress2012LocalDbPrerequisite() { 
-                        //}
-                        //new SQLExpress2012LocalDbPrerequisite() { 
-                        //    FilePathIfInstallSourceIsEmbedded = 
-                        //    new Dictionary<SpiceLogic.DeploymentToolkit.InstallerModule.Prerequisite.Architecture, string> 
+                       
+                        //new SQLExpress2012LocalDbPrerequisite
+                        //{ 
+                        //    FilePathIfInstallSourceIsEmbedded = new Dictionary<Prerequisite.Architecture, string> 
                         //    {
-                        //        { SpiceLogic.DeploymentToolkit.InstallerModule.Prerequisite.Architecture.X64, @"{src}\SqlServer\SqlLocalDB.x64.MSI" },
-                        //        { SpiceLogic.DeploymentToolkit.InstallerModule.Prerequisite.Architecture.X86, @"{src}\SqlServer\SqlLocalDB.x86.MSI" }
+                        //        { Prerequisite.Architecture.X64, @"C:\SqlServer\SqlLocalDB.x64.MSI" },
+                        //        { Prerequisite.Architecture.X86, @"C:\SqlServer\SqlLocalDB.x86.MSI" }
                         //    }
-                        //}
+                        //},
                         new SQLExpress2012LocalDbPrerequisite
                         { 
                             FileUrlIfInstallSourceIsWebAuto = 
                             new Dictionary<Prerequisite.Architecture, string> 
                             {
-                                { Prerequisite.Architecture.X64, "http://dl.dropboxusercontent.com/u/204009/SqlLocalDB.x64.MSI" },
-                                { Prerequisite.Architecture.X86, "http://dl.dropboxusercontent.com/u/204009/SqlLocaLDB.x86.MSI" }
+                                { Prerequisite.Architecture.X64, "http://your-repository/SqlLocalDB.x64.MSI" },
+                                { Prerequisite.Architecture.X86, "http://your-repository/SqlLocaLDB.x86.MSI" }
                             },
                             MessageWhileInstallationInProgress = "Please wait while setup install prerequisite: SqlLocalDB..."
                         }
