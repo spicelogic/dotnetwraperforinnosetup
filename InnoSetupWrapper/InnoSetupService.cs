@@ -68,7 +68,7 @@ namespace SpiceLogic.InnoSetupWrapper
         /// Generates the scripts.
         /// </summary>
         /// <exception cref="System.NotImplementedException"></exception>
-        protected virtual void GenerateScripts()
+        public virtual void GenerateScripts()
         {
             try
             {
