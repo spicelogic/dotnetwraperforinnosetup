@@ -170,4 +170,4 @@ Yes, you do need to configure your installer and the Constructor of this InnoSet
 
 
 
-When you build your installer using this wrapper, your installer will create an uninstaller automatically and place the uninstaller in the Program Files / Start Menu folder. The uninstaller created by this wrapper will be smart enough to delete the User's App Data Directory created by this application. Not only that, if no other application has been installed from the same company (your company), then the Company App Data folder will be deleted too upon uninstallation.
+
