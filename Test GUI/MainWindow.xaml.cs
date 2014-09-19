@@ -151,9 +151,9 @@ namespace Test_GUI
                     innoSetupSetting.SignToolInfo = theSignToolInfo;
                 }
 
-                InnoSetupService generator = new InnoSetupService(innoSetupSetting, textboxInnoSetupCompiler.Text);
+                InnoSetupService generator = new InnoSetupService(innoSetupSetting);
 
-                string result = generator.BuildSetupFile();
+                string result = generator.BuildSetupFile(textboxInnoSetupCompiler.Text);
                 new MessageDisplayBox(result, "Success").ShowDialog();
 
                 if (MessageBox.Show("Do you want to run the Installer now ?", "Run now ?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
