@@ -20,17 +20,15 @@ namespace SpiceLogic.InnoSetupWrapper
     {
         private readonly SetupSettings _settings;
 
-        private readonly string _innoSetupCompilerExePath;
         private readonly string _innoScriptFilePath;
         private readonly string _generatedSetupScriptFolderPath;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="InnoSetupService"/> class.
+        /// Initializes a new instance of the <see cref="InnoSetupService" /> class.
         /// </summary>
         /// <param name="settings">The settings.</param>
-        /// <param name="innoSetupCompilerExePath">The inno setup compiler executable path.</param>
-        public InnoSetupService(SetupSettings settings, string innoSetupCompilerExePath)
-            
+        /// <exception cref="System.Exception"></exception>
+        public InnoSetupService(SetupSettings settings)
         {
             IEnumerable<PropertyInfo> properties = settings.GetType().GetProperties();
             foreach (PropertyInfo p in properties)
@@ -46,7 +44,6 @@ namespace SpiceLogic.InnoSetupWrapper
             }
 
             _settings = settings;
-            _innoSetupCompilerExePath = innoSetupCompilerExePath;
             _innoScriptFilePath = string.Format("{0}\\Script.iss", settings.GeneratedSetupScriptFolderPath);
             _generatedSetupScriptFolderPath = settings.GeneratedSetupScriptFolderPath;
         }
@@ -216,12 +213,12 @@ namespace SpiceLogic.InnoSetupWrapper
         /// Builds the setup file silently. Throws Exception if Build Fails.
         /// </summary>
         /// <exception cref="System.NotImplementedException"></exception>
-        public virtual string BuildSetupFile()
+        public virtual string BuildSetupFile(string innoSetupCompilerExePath)
         {
             GenerateScripts();
 
-            if (!File.Exists(_innoSetupCompilerExePath))
-                throw new Exception(string.Format("InnoSetup was not found at {0}", _innoSetupCompilerExePath));
+            if (!File.Exists(innoSetupCompilerExePath))
+                throw new Exception(string.Format("InnoSetup was not found at {0}", innoSetupCompilerExePath));
             if (!File.Exists(_innoScriptFilePath))
                 throw new Exception(string.Format("Inno Setup Script file was not found at {0}", _innoScriptFilePath));
 
@@ -238,7 +235,7 @@ namespace SpiceLogic.InnoSetupWrapper
             else
                 argument = string.Format("\"{0}\"", _innoScriptFilePath);
 
-            ProcessStartInfo psi = new ProcessStartInfo(_innoSetupCompilerExePath, argument)
+            ProcessStartInfo psi = new ProcessStartInfo(innoSetupCompilerExePath, argument)
             {
                 CreateNoWindow = true,
                 UseShellExecute = false,
