@@ -148,7 +148,7 @@ Yes, you do need to configure your installer and the Constructor of this InnoSet
             // we can instantiate the  InnoSetupService and pass this Settings object to the constructor.
 
             InnoSetupService generator = new InnoSetupService(innoSetupSetting);
-            // Yes, you need to pass your InnoSetup Compiler File Path. At the time of this writing, This wrapper library is working fine on Inno Setup 5. 
+           
             // And it should work on future versions too. If this library stops to work on future version, then, as this wrapper library source code is open,
             // hopefully someone will come up with an upgrade which will work on the future version.
 
@@ -156,9 +156,11 @@ Yes, you do need to configure your installer and the Constructor of this InnoSet
             // finally call the BuildSetupFile() method of InnoSetupService Class. This method will return a log string which 
             // is captured from the Console output of InnoSetup.
             string result = generator.BuildSetupFile(innoSetupCompilerExePath: "C:\\Program Files (x86)\\Inno Setup 5\\iscc.exe");
-
+            // Yes, you need to pass your InnoSetup Compiler File Path. At the time of this writing, This wrapper library is working fine on Inno Setup 5. 
             // If all goes good, then, your Setup exe file is built by this time and stored in the path you defined in the property
             // named OutPutSetupFilePath.
+
+            // If you just need to generate the PASCAL Scripts without building the installer automatically, you can call the method : GenerateScripts().
 
         }
 
