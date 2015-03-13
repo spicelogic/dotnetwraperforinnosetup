@@ -89,6 +89,7 @@ namespace SpiceLogic.InnoSetupWrapper
             try
             {
                 string script = Resources.InnoSetupScript;
+               
                 if (_settings.SignToolInfo == null)
                 {
                     const string sectionStart = ";#section Signtool";
@@ -97,6 +98,7 @@ namespace SpiceLogic.InnoSetupWrapper
                     int to = script.IndexOf(sectionEnd, StringComparison.Ordinal) + sectionEnd.Length;
                     script = script.Remove(from, to - from);
                 }
+              
                 if (string.IsNullOrEmpty(_settings.FileExtensionAssociation))
                 {
                     const string sectionStart = ";#section Association";
@@ -109,6 +111,7 @@ namespace SpiceLogic.InnoSetupWrapper
                     to = script.IndexOf(sectionEnd, StringComparison.Ordinal) + sectionEnd.Length;
                     script = script.Remove(from, to - from);
                 }
+               
                 if (_settings.ShellContextMenuItem != null)
                 {
                     const string sectionStart = ";#section ContextMenu";
@@ -199,6 +202,7 @@ namespace SpiceLogic.InnoSetupWrapper
 
             string finalMetaDataFileContent = metaDataBuilder.ToString();
             string projectMetaDataFilePath = string.Format("{0}\\ProjectMetaData.txt", _settings.GeneratedSetupScriptFolderPath);
+            
             try
             {
                 File.WriteAllText(projectMetaDataFilePath, finalMetaDataFileContent);

@@ -75,11 +75,11 @@ namespace SpiceLogic.InnoSetupWrapper.Utilities
         /// <summary>
         /// Cleans all files information directory.
         /// </summary>
-        /// <param name="DirectoryToClean">The directory automatic clean.</param>
+        /// <param name="directoryToClean">The directory automatic clean.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
-        private static void cleanAllFilesInDirectory(DirectoryInfo DirectoryToClean, CancellationToken cancellationToken)
+        private static void cleanAllFilesInDirectory(DirectoryInfo directoryToClean, CancellationToken cancellationToken)
         {
-            foreach (FileInfo fi in DirectoryToClean.GetFiles())
+            foreach (FileInfo fi in directoryToClean.GetFiles())
             {
                 cancellationToken.ThrowIfCancellationRequested();
 
