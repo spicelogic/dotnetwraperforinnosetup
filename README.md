@@ -1,4 +1,4 @@
-.Net Wraper For Inno Setup
+.Net Wrapper For Inno Setup
 ========================
 
 .NET Wrapper for Inno Setup
