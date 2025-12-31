@@ -1,11 +1,11 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoSetupWrapper", "InnoSetupWrapper\InnoSetupWrapper.csproj", "{6EDF60BD-7F86-42DB-B059-608EAF1E9AE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InnoSetupWrapper", "InnoSetupWrapper\InnoSetupWrapper.csproj", "{6EDF60BD-7F86-42DB-B059-608EAF1E9AE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test GUI", "Test GUI\Test GUI.csproj", "{EF5C4A5D-E6DC-4006-A13E-B26300757FFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test GUI", "Test GUI\Test GUI.csproj", "{EF5C4A5D-E6DC-4006-A13E-B26300757FFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,8 +24,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		VisualSVNWorkingCopyRoot = .
 	EndGlobalSection
 EndGlobal
